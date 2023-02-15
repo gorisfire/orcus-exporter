@@ -21,7 +21,7 @@ build() {
     mkdir -p dist/rpm_build/usr/bin
     mkdir -p dist/rpm_build/etc/systemd/system
     cp etc/systemd/orcus-exporter.service dist/rpm_build/etc/systemd/system
-    cp dist/orcus-exporter_linux_amd64/orcus-exporter dist/rpm_build/usr/bin
+    cp dist/orcus-exporter_linux_amd64_v1/orcus-exporter dist/rpm_build/usr/bin
 
     fpm -v $version --epoch 1 -f -s dir -n $package_name -m "MaxFedotov <m.a.fedotov@gmail.com>" --description "Orcus Prometheus Exporter" --url "https://github.com/MaxFedotov/orcus-exporter" --vendor "MaxFedotov" --license "Apache 2.0" --rpm-os linux --before-install scripts/pre-install.sh --rpm-attr 744,orcus_exporter,orcus_exporter:/var/log/orcus-exporter -t rpm -C dist/rpm_build -p dist/
 

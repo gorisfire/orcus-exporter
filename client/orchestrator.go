@@ -62,7 +62,7 @@ func (client *OrchestratorClient) GetMetrics() (*OrchestratorMetrics, error) {
 	if err != nil {
 		return nil, err
 	}
-	metrics.Problems, err = client.getProblems("/problems")
+	metrics.Problems, err = client.getProblems("/problems2")
 	if err != nil {
 		return nil, err
 	}
